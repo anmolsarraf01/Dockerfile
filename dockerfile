@@ -1,5 +1,8 @@
 FROM python
 COPY . /src
 CMD ["python", "/src/PythonExample.py"]
-RUN chmod +x /shell-script.sh
-CMD ["Completed"]
+
+FROM ubuntu:16.04 
+COPY my-bash.sh /
+RUN chmod +x /my-bash.sh && /my-bash.sh 
+CMD ["Finished!"]
