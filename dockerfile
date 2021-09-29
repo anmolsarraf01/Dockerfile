@@ -9,7 +9,7 @@ curl
 CMD /bin/bash
 
 
-FROM ubuntu:15.10
+FROM ubuntu:16.04
 RUN  apt-get update -y && \
      apt-get upgrade -y && \
      apt-get dist-upgrade -y && \
