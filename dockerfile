@@ -37,7 +37,7 @@ FROM centos
 RUN yum -y update && \
     yum -y install httpd && \
     yum clean all
-COPY ./my-bash.sh /
+COPY ./my-bash.sh 
 RUN chmod +x /my-bash.sh
 ENTRYPOINT ["/my-bash.sh"]
 CMD ["bash"]
