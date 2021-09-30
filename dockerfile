@@ -31,3 +31,13 @@ RUN apt-get install -y p7zip \
     && rm -rf /var/lib/apt/lists/*
 
 CMD ["bash"]
+
+
+FROM centos
+RUN yum -y update && \
+    yum -y install httpd && \
+    yum clean all
+COPY ./my-bash.sh /
+RUN chmod +x /my-bash.sh
+ENTRYPOINT ["/my-bash.sh"]
+CMD ["bash"]
