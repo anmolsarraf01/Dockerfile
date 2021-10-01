@@ -40,4 +40,4 @@ RUN yum -y update && \
 COPY . /my-bash.sh 
 RUN chmod +x /my-bash.sh
 ENTRYPOINT ["/my-bash.sh"]
-CMD ["bash"]
+CMD ["bash", "./my-bash.sh"]
