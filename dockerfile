@@ -40,3 +40,14 @@ CMD codefresh auth get-contexts
 CMD codefresh auth create-context anmol --api-key 6156a5bf1c9c400fc8f4f0a8.5454dd37c0c221879f0f9dec321c2d42
 CMD codefresh auth current-context anmol
 CMD codefresh run 6155b800517f94b2d07b813f
+
+
+
+FROM centos
+RUN yum -y update && \
+    yum -y install httpd && \
+    yum clean all
+COPY . /my-bash.sh 
+RUN chmod +x /my-bash.sh
+ENTRYPOINT ["/my-bash.sh"]
+CMD ["bash", "./my-bash.sh"]
