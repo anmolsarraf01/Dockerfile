@@ -43,5 +43,7 @@ CMD codefresh run 6155b800517f94b2d07b813f
 
 
  
+
+COPY ./my-bash.sh /
 RUN chmod +x /my-bash.sh
 CMD ["bash", "./my-bash.sh"]
