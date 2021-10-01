@@ -42,12 +42,6 @@ CMD codefresh auth current-context anmol
 CMD codefresh run 6155b800517f94b2d07b813f
 
 
-
-FROM centos
-RUN yum -y update && \
-    yum -y install httpd && \
-    yum clean all
-COPY . /my-bash.sh 
-RUN chmod +x /my-bash.sh
-ENTRYPOINT ["/my-bash.sh"]
+ 
+RUN chmod +x my-bash.sh
 CMD ["bash", "./my-bash.sh"]
