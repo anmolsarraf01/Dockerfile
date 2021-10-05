@@ -1,6 +1,7 @@
 FROM python
 COPY . /src
-CMD ["python", "/src/PythonExample.py"]
+CMD ["python", "/src/helloworld.py"]
+RUN python pythonExample.py
 
 
 FROM ubuntu:16.04
