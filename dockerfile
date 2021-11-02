@@ -2,6 +2,11 @@ FROM python
 COPY . /src
 CMD ["python", "/src/helloworld.py"]
 CMD ["python", "./pythonExample.py"]
+# Unit tests
+RUN python setup.py test
+
+EXPOSE 5000
+CMD [ "flask", "run", "--host=0.0.0.0" ]
 
 
 FROM ubuntu:16.04
